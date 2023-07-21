@@ -1,9 +1,17 @@
 version: '0.1'
 services:
-  database:
+  dev-database:
     image: postgres
     ports:
       - 5432:5432
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin123
+      - POSTGRES_DB=hub4itdb
+  test-database:
+    image: postgres
+    ports:
+      - 5433:5432
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin123
